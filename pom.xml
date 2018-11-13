@@ -6,7 +6,13 @@
 	<groupId>com.fxp</groupId>
 	<artifactId>myaop</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+    <modules>
+        <module>aop-base-function</module>
+        <module>myaop-spring-boot-autoconfigure</module>
+        <module>myaop-spring-boot-starter</module>
+        <module>myaop-spring-boot-starter-test</module>
+    </modules>
+    <packaging>pom</packaging>
 
 	<name>myaop</name>
 	<description>cglib aop</description>
@@ -22,25 +28,30 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+        <aop-base-function.version>0.0.1-SNAPSHOT</aop-base-function.version>
+        <myaop-spring-boot-autoconfigure.version>0.0.1-SNAPSHOT</myaop-spring-boot-autoconfigure.version>
 	</properties>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-aop</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.fxp</groupId>
+                <artifactId>aop-base-function</artifactId>
+                <version>${aop-base-function.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fxp</groupId>
+                <artifactId>myaop-spring-boot-autoconfigure</artifactId>
+                <version>${myaop-spring-boot-autoconfigure.version}</version>
+            </dependency>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
