@@ -10,6 +10,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>myaop-spring-boot-starter</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fxp</groupId>
+            <artifactId>myaop-spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fxp</groupId>
+            <artifactId>aop-base-function</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

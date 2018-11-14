@@ -13,15 +13,8 @@
     <dependencies>
         <dependency>
             <groupId>com.fxp</groupId>
-            <artifactId>aop-base-function</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fxp</groupId>
-            <artifactId>myaop-spring-boot-autoconfigure</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
+            <artifactId>myaop-spring-boot-starter</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
