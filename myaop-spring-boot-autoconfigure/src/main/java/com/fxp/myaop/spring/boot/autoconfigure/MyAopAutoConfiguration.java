@@ -1,3 +1,5 @@
+package com.fxp.myaop.spring.boot.autoconfigure;
+
 import com.fxp.myaop.function.AopCreater;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -15,11 +17,12 @@ import org.springframework.context.annotation.Configuration;
  * Time: 7:11 PM
  */
 @Configuration
-@ConditionalOnClass({Enhancer.class})
-@EnableConfigurationProperties(MyAopProperties.class)
+@ConditionalOnClass({Enhancer.class})//当依赖中存在Enhancer时，这个配置类才生效
+@EnableConfigurationProperties(MyAopProperties.class)//使绑定的外部配置生效
 public class MyAopAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
+        //在没有这个bean时才注入，比如，你想要对AopCreater里的行为做修改，你可以自己注入一个AopCreater，这样这个bean就不会被注入
     AopCreater aopCreater(){
         AopCreater aopCreater = new AopCreater();
         return aopCreater;

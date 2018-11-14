@@ -1,3 +1,5 @@
+package com.fxp.myaop.spring.boot.autoconfigure;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**

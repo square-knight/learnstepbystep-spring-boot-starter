@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  * Date: 2018-11-13
  * Time: 2:03 PM
  */
-@Component
+//@Component
 public class AopCreater implements BeanPostProcessor{
     @Override
     public Object postProcessAfterInitialization(final Object bean, String beanName) throws BeansException {
