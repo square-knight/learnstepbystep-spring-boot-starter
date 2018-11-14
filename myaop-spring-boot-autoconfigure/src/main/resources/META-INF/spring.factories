@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.fxp.myaop.spring.boot.autoconfigure.MyAopAutoConfiguration
